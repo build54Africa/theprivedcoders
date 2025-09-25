@@ -1,0 +1,304 @@
+// Kenya Hospitals Database - Major hospitals across the country
+const kenyaHospitals = [
+    // Nairobi Hospitals
+    {
+        id: 1,
+        name: "Kenyatta National Hospital",
+        type: "public",
+        emergency: true,
+        address: "Hospital Road, Nairobi",
+        county: "Nairobi",
+        phone: "+254-20-2726300",
+        coordinates: [-1.3040, 36.8120],
+        services: ["Emergency", "ICU", "Surgery", "Maternity", "Pediatrics"],
+        rating: 4.2,
+        hours: "24/7"
+    },
+    {
+        id: 2,
+        name: "Nairobi Hospital",
+        type: "private",
+        emergency: true,
+        address: "Argwings Kodhek Road, Nairobi",
+        county: "Nairobi",
+        phone: "+254-703-082000",
+        coordinates: [-1.2921, 36.7960],
+        services: ["Emergency", "Cardiology", "Oncology", "Orthopedics"],
+        rating: 4.5,
+        hours: "24/7"
+    },
+
+    // Central Province Hospitals
+    {
+        id: 3,
+        name: "Nyeri County Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Nyeri Town",
+        county: "Nyeri",
+        phone: "+254-061-2030000",
+        coordinates: [-0.4200, 36.9500],
+        services: ["Emergency", "General Medicine", "Maternity"],
+        rating: 3.9,
+        hours: "24/7"
+    },
+    {
+        id: 4,
+        name: "Murang'a County Hospital",
+        type: "public",
+        emergency: true,
+        address: "Murang'a Town",
+        county: "Murang'a",
+        phone: "+254-770-123456",
+        coordinates: [-0.7200, 37.1500],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.7,
+        hours: "24/7"
+    },
+
+    // Rift Valley Hospitals
+    {
+        id: 5,
+        name: "Moi Teaching and Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Eldoret",
+        county: "Uasin Gishu",
+        phone: "+254-53-2030000",
+        coordinates: [0.5200, 35.2700],
+        services: ["Emergency", "ICU", "Specialized Care", "Teaching Hospital"],
+        rating: 4.3,
+        hours: "24/7"
+    },
+    {
+        id: 6,
+        name: "Nakuru General Hospital",
+        type: "public",
+        emergency: true,
+        address: "Nakuru Town",
+        county: "Nakuru",
+        phone: "+254-751-234567",
+        coordinates: [-0.3000, 36.0700],
+        services: ["Emergency", "General Medicine", "Surgery"],
+        rating: 4.0,
+        hours: "24/7"
+    },
+    {
+        id: 7,
+        name: "Kericho County Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Kericho Town",
+        county: "Kericho",
+        phone: "+254-752-345678",
+        coordinates: [-0.3700, 35.2800],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.8,
+        hours: "24/7"
+    },
+
+    // Western Kenya Hospitals
+    {
+        id: 8,
+        name: "Jaramogi Oginga Odinga Teaching & Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Kisumu",
+        county: "Kisumu",
+        phone: "+254-57-2020000",
+        coordinates: [-0.1000, 34.7500],
+        services: ["Emergency", "ICU", "Teaching Hospital"],
+        rating: 4.1,
+        hours: "24/7"
+    },
+    {
+        id: 9,
+        name: "Kakamega County General Hospital",
+        type: "public",
+        emergency: true,
+        address: "Kakamega Town",
+        county: "Kakamega",
+        phone: "+254-756-456789",
+        coordinates: [0.2800, 34.7500],
+        services: ["Emergency", "General Medicine", "Maternity"],
+        rating: 3.8,
+        hours: "24/7"
+    },
+
+    // Eastern Province Hospitals
+    {
+        id: 10,
+        name: "Embu Level 5 Hospital",
+        type: "public",
+        emergency: true,
+        address: "Embu Town",
+        county: "Embu",
+        phone: "+254-768-567890",
+        coordinates: [-0.5300, 37.4500],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.7,
+        hours: "24/7"
+    },
+    {
+        id: 11,
+        name: "Meru Teaching and Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Meru Town",
+        county: "Meru",
+        phone: "+254-764-678901",
+        coordinates: [0.0500, 37.6500],
+        services: ["Emergency", "Teaching Hospital"],
+        rating: 3.9,
+        hours: "24/7"
+    },
+
+    // Coast Province Hospitals
+    {
+        id: 12,
+        name: "Coast General Teaching & Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Mombasa",
+        county: "Mombasa",
+        phone: "+254-41-2220000",
+        coordinates: [-4.0500, 39.6700],
+        services: ["Emergency", "ICU", "Teaching Hospital"],
+        rating: 4.0,
+        hours: "24/7"
+    },
+    {
+        id: 13,
+        name: "Malindi Sub-County Hospital",
+        type: "public",
+        emergency: true,
+        address: "Malindi",
+        county: "Kilifi",
+        phone: "+254-42-2120000",
+        coordinates: [-3.2200, 40.1200],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.6,
+        hours: "24/7"
+    },
+
+    // Nyanza Hospitals
+    {
+        id: 14,
+        name: "Kisii Teaching and Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Kisii Town",
+        county: "Kisii",
+        phone: "+254-58-3030000",
+        coordinates: [-0.6800, 34.7800],
+        services: ["Emergency", "Teaching Hospital"],
+        rating: 3.9,
+        hours: "24/7"
+    },
+    {
+        id: 15,
+        name: "Homa Bay County Hospital",
+        type: "public",
+        emergency: true,
+        address: "Homa Bay Town",
+        county: "Homa Bay",
+        phone: "+254-759-789012",
+        coordinates: [-0.5300, 34.4600],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.5,
+        hours: "24/7"
+    },
+
+    // Additional major hospitals across Kenya
+    {
+        id: 16,
+        name: "Garissa County Referral Hospital",
+        type: "public",
+        emergency: true,
+        address: "Garissa Town",
+        county: "Garissa",
+        phone: "+254-746-890123",
+        coordinates: [-0.4500, 39.6400],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.4,
+        hours: "24/7"
+    },
+    {
+        id: 17,
+        name: "Machakos Level 5 Hospital",
+        type: "public",
+        emergency: true,
+        address: "Machakos Town",
+        county: "Machakos",
+        phone: "+254-744-901234",
+        coordinates: [-1.5200, 37.2600],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.6,
+        hours: "24/7"
+    },
+    {
+        id: 18,
+        name: "Thika Level 5 Hospital",
+        type: "public",
+        emergency: true,
+        address: "Thika Town",
+        county: "Kiambu",
+        phone: "+254-767-012345",
+        coordinates: [-1.0400, 37.0800],
+        services: ["Emergency", "General Medicine", "Maternity"],
+        rating: 3.8,
+        hours: "24/7"
+    },
+    {
+        id: 19,
+        name: "Naivasha Sub-County Hospital",
+        type: "public",
+        emergency: true,
+        address: "Naivasha",
+        county: "Nakuru",
+        phone: "+254-750-123456",
+        coordinates: [-0.7200, 36.4300],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.5,
+        hours: "24/7"
+    },
+    {
+        id: 20,
+        name: "Kitale District Hospital",
+        type: "public",
+        emergency: true,
+        address: "Kitale",
+        county: "Trans Nzoia",
+        phone: "+254-754-234567",
+        coordinates: [1.0200, 35.0000],
+        services: ["Emergency", "General Medicine"],
+        rating: 3.6,
+        hours: "24/7"
+    }
+];
+
+// Kenya counties and their approximate coordinates for search
+const kenyaCounties = {
+    "nairobi": [-1.2864, 36.8172],
+    "mombasa": [-4.0500, 39.6700],
+    "kisumu": [-0.1000, 34.7500],
+    "nakuru": [-0.3000, 36.0700],
+    "eldoret": [0.5200, 35.2700],
+    "thika": [-1.0400, 37.0800],
+    "nyeri": [-0.4200, 36.9500],
+    "meru": [0.0500, 37.6500],
+    "embu": [-0.5300, 37.4500],
+    "machakos": [-1.5200, 37.2600],
+    "kakamega": [0.2800, 34.7500],
+    "kisii": [-0.6800, 34.7800],
+    "garissa": [-0.4500, 39.6400],
+    "malindi": [-3.2200, 40.1200],
+    "kitale": [1.0200, 35.0000],
+    "naivasha": [-0.7200, 36.4300],
+    "muranga": [-0.7200, 37.1500],
+    "kericho": [-0.3700, 35.2800],
+    "homa bay": [-0.5300, 34.4600]
+};
+
+// Default center of Kenya
+const KENYA_CENTER = [0.0236, 37.9062];
