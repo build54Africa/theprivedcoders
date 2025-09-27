@@ -6,7 +6,7 @@ const firstAidGuides = {
         description: 'For unconscious, non-breathing individuals',
         steps: [
             "Check the scene for safety and check the person. Tap their shoulder and shout 'Are you okay?'",
-            "If unresponsive, call emergency services (911) immediately or ask someone to call",
+            "If unresponsive, call emergency services (1199) immediately or ask someone to call",
             "Place the person on their back on a firm, flat surface",
             "Place the heel of one hand on the center of the person's chest (between the nipples)",
             "Place your other hand on top and interlock your fingers",
@@ -83,13 +83,46 @@ const firstAidGuides = {
         description: 'Anaphylaxis emergency response',
         steps: [
             "Check if the person has an epinephrine auto-injector (EpiPen) and help them use it if needed",
-            "Call emergency services immediately",
+            "Call emergency services (1199) immediately",
             "Have the person lie down on their back and elevate their feet",
             "Loosen tight clothing and cover them with a blanket",
             "If vomiting or having trouble breathing, have them lie on their side",
             "Do not give anything to drink",
             "Monitor breathing and be prepared to perform CPR if necessary",
             "Even if symptoms improve after epinephrine, medical evaluation is still necessary"
+        ]
+    },
+    snakebite: {
+        id: 'snakebite',
+        title: 'Snake Bite',
+        icon: '🐍',
+        description: 'Emergency response for snake bites',
+        steps: [
+            "Move away from the snake to avoid further bites",
+            "Keep the person calm and still to slow venom spread",
+            "Position the bite area below heart level if possible",
+            "Remove tight clothing or jewelry near the bite",
+            "Do NOT cut the wound or try to suck out venom",
+            "Do NOT apply a tourniquet",
+            "Do NOT apply ice or cold packs",
+            "Seek immediate medical attention - try to remember the snake's appearance",
+            "Keep the person as still as possible during transport"
+        ]
+    },
+    heatstroke: {
+        id: 'heatstroke',
+        title: 'Heat Stroke',
+        icon: '🌡️',
+        description: 'Life-threatening heat emergency',
+        steps: [
+            "Move the person to a cool, shaded area",
+            "Remove excess clothing",
+            "Cool the person with whatever means available - wet cloth, fan, cool water",
+            "Apply cool packs to neck, armpits, and groin",
+            "Do NOT give fluids if the person is unconscious",
+            "Monitor breathing and be prepared for CPR",
+            "Seek immediate medical attention - heat stroke is a medical emergency",
+            "Continue cooling efforts while waiting for help"
         ]
     }
 };
@@ -104,7 +137,9 @@ const chatFlow = {
             { text: "Someone has a burn", next: "burns_type" },
             { text: "Someone is bleeding severely", next: "bleeding_check" },
             { text: "Someone may have a broken bone", next: "fracture_check" },
-            { text: "Severe allergic reaction", next: "allergic_check" }
+            { text: "Severe allergic reaction", next: "allergic_check" },
+            { text: "Snake bite", next: "snakebite_emergency" },
+            { text: "Heat stroke", next: "heatstroke_emergency" }
         ]
     },
     breathing_check: {
@@ -124,7 +159,7 @@ const chatFlow = {
     },
     call_emergency_cpr: {
         type: 'instruction',
-        message: "🆘 Call emergency services (911) immediately! Put your phone on speaker so you can follow instructions while helping.",
+        message: "🆘 Call emergency services (1199) immediately! Put your phone on speaker so you can follow instructions while helping.",
         next: "cpr_instructions"
     },
     cpr_instructions: {
@@ -213,12 +248,12 @@ const chatFlow = {
     },
     burns_chemical: {
         type: 'instruction',
-        message: "🆘 For chemical burns: Remove contaminated clothing carefully, brush off dry chemicals, then flush with large amounts of water. Call poison control (1-800-222-1222) and seek medical help.",
+        message: "🆘 For chemical burns: Remove contaminated clothing carefully, brush off dry chemicals, then flush with large amounts of water. Call emergency services (1199) and seek medical help.",
         next: null
     },
     burns_electrical: {
         type: 'instruction',
-        message: "🆘 Electrical burns can cause internal damage not visible externally. Do not approach if the person is still in contact with the electrical source. Call emergency services immediately.",
+        message: "🆘 Electrical burns can cause internal damage not visible externally. Do not approach if the person is still in contact with the electrical source. Call emergency services (1199) immediately.",
         next: null
     },
     bleeding_check: {
@@ -238,7 +273,7 @@ const chatFlow = {
     },
     bleeding_arterial: {
         type: 'instruction',
-        message: "🆘 This appears to be arterial bleeding - CALL EMERGENCY immediately! Apply extreme pressure directly on the wound. Do not remove pressure to check.",
+        message: "🆘 This appears to be arterial bleeding - CALL EMERGENCY (1199) immediately! Apply extreme pressure directly on the wound. Do not remove pressure to check.",
         next: "bleeding_severe"
     },
     embedded_object: {
@@ -257,7 +292,7 @@ const chatFlow = {
     },
     fracture_severe: {
         type: 'instruction',
-        message: "🆘 For obvious fractures with deformity or protruding bone: Do not try to straighten. Control any bleeding. Keep the person still and call emergency services.",
+        message: "🆘 For obvious fractures with deformity or protruding bone: Do not try to straighten. Control any bleeding. Keep the person still and call emergency services (1199).",
         next: "fracture_general"
     },
     allergic_check: {
@@ -272,6 +307,26 @@ const chatFlow = {
     allergic_severe: {
         type: 'steps',
         guide: 'allergic',
+        next: null
+    },
+    snakebite_emergency: {
+        type: 'steps',
+        guide: 'snakebite',
+        next: "after_snakebite"
+    },
+    after_snakebite: {
+        type: 'instruction',
+        message: "🆘 Snake bites require immediate medical attention. Keep the person calm and still. Do not attempt to catch the snake, but try to remember its appearance for identification.",
+        next: null
+    },
+    heatstroke_emergency: {
+        type: 'steps',
+        guide: 'heatstroke',
+        next: "after_heatstroke"
+    },
+    after_heatstroke: {
+        type: 'instruction',
+        message: "🆘 Heat stroke is a medical emergency. Continue cooling efforts while waiting for help. Monitor breathing and be prepared for CPR if needed.",
         next: null
     },
     choking_resolved: {
@@ -301,7 +356,7 @@ const chatFlow = {
     },
     call_emergency_burns: {
         type: 'instruction',
-        message: "🆘 CALL EMERGENCY immediately for third-degree burns! Do not apply water. Cover with a clean, dry cloth.",
+        message: "🆘 CALL EMERGENCY (1199) immediately for third-degree burns! Do not apply water. Cover with a clean, dry cloth.",
         next: null
     },
     bleeding_monitor: {

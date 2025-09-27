@@ -1,6 +1,4 @@
-// Kenya Hospitals Database - Major hospitals across the country
 const kenyaHospitals = [
-    // Nairobi Hospitals
     {
         id: 1,
         name: "Kenyatta National Hospital",
@@ -27,8 +25,6 @@ const kenyaHospitals = [
         rating: 4.5,
         hours: "24/7"
     },
-
-    // Central Province Hospitals
     {
         id: 3,
         name: "Nyeri County Referral Hospital",
@@ -55,8 +51,6 @@ const kenyaHospitals = [
         rating: 3.7,
         hours: "24/7"
     },
-
-    // Rift Valley Hospitals
     {
         id: 5,
         name: "Moi Teaching and Referral Hospital",
@@ -96,8 +90,6 @@ const kenyaHospitals = [
         rating: 3.8,
         hours: "24/7"
     },
-
-    // Western Kenya Hospitals
     {
         id: 8,
         name: "Jaramogi Oginga Odinga Teaching & Referral Hospital",
@@ -124,8 +116,6 @@ const kenyaHospitals = [
         rating: 3.8,
         hours: "24/7"
     },
-
-    // Eastern Province Hospitals
     {
         id: 10,
         name: "Embu Level 5 Hospital",
@@ -152,8 +142,6 @@ const kenyaHospitals = [
         rating: 3.9,
         hours: "24/7"
     },
-
-    // Coast Province Hospitals
     {
         id: 12,
         name: "Coast General Teaching & Referral Hospital",
@@ -180,8 +168,6 @@ const kenyaHospitals = [
         rating: 3.6,
         hours: "24/7"
     },
-
-    // Nyanza Hospitals
     {
         id: 14,
         name: "Kisii Teaching and Referral Hospital",
@@ -208,8 +194,6 @@ const kenyaHospitals = [
         rating: 3.5,
         hours: "24/7"
     },
-
-    // Additional major hospitals across Kenya
     {
         id: 16,
         name: "Garissa County Referral Hospital",
@@ -277,7 +261,6 @@ const kenyaHospitals = [
     }
 ];
 
-// Kenya counties and their approximate coordinates for search
 const kenyaCounties = {
     "nairobi": [-1.2864, 36.8172],
     "mombasa": [-4.0500, 39.6700],
@@ -300,5 +283,4 @@ const kenyaCounties = {
     "homa bay": [-0.5300, 34.4600]
 };
 
-// Default center of Kenya
 const KENYA_CENTER = [0.0236, 37.9062];

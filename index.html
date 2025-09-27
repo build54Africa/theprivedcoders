@@ -10,8 +10,8 @@
 <body>
     <header>
         <div class="container">
-            <h1>🚑 First Aid Guide</h1>
-            <p>Emergency medical assistance at your fingertips</p>
+            <h1>🚑 First Aid Guide Kenya</h1>
+            <p>Emergency medical assistance anywhere in Kenya</p>
         </div>
     </header>
 
@@ -54,115 +54,118 @@
             </div>
         </section>
 
-        <!-- Replace the hospitals-screen section with this updated version -->
-<section id="hospitals-screen" class="screen">
-    <div class="container">
-        <button id="hospitals-back-btn" class="back-button">← Back to Main Menu</button>
-        
-        <div class="hospitals-header">
-            <h2>🏥 Find Nearest Hospitals</h2>
-            <p>Emergency medical facilities anywhere in Kenya</p>
-        </div>
+        <section id="hospitals-screen" class="screen">
+            <div class="container">
+                <button id="hospitals-back-btn" class="back-button">← Back to Main Menu</button>
+                
+                <div class="hospitals-header">
+                    <h2>🏥 Find Nearest Hospitals</h2>
+                    <p>Emergency medical facilities anywhere in Kenya</p>
+                </div>
 
-        <div class="location-controls">
-            <div class="location-input">
-                <input type="text" id="location-search" placeholder="Enter your town or county (e.g., Eldoret, Kisumu, Mombasa)">
-                <button id="search-location" class="search-btn">Search Area</button>
-            </div>
-            <button id="use-current-location" class="location-btn">
-                📍 Use My Current Location
-            </button>
-            <div class="location-status" id="location-status">
-                <span class="status-icon">📍</span>
-                <span id="status-text">Ready to locate nearest hospitals</span>
-            </div>
-        </div>
+                <div class="location-controls">
+                    <div class="location-input">
+                        <input type="text" id="location-search" placeholder="Enter your town or county (e.g., Eldoret, Kisumu, Mombasa)">
+                        <button id="search-location" class="search-btn">Search Area</button>
+                    </div>
+                    <button id="use-current-location" class="location-btn">
+                        📍 Use My Current Location
+                    </button>
+                    <div class="location-status" id="location-status">
+                        <span class="status-icon">📍</span>
+                        <span id="status-text">Ready to locate nearest hospitals</span>
+                    </div>
+                </div>
 
-        <div class="hospitals-container">
-            <div class="map-container">
-                <div id="hospital-map"></div>
-                <div class="map-overlay">
-                    <div class="map-info" id="map-info">
-                        <h4>Kenya Hospital Locator</h4>
-                        <p>Finding hospitals within <span id="search-radius">50</span> km radius</p>
+                <div class="hospitals-container">
+                    <div class="map-container">
+                        <div id="hospital-map"></div>
+                        <div class="map-overlay">
+                            <div class="map-info" id="map-info">
+                                <h4>Kenya Hospital Locator</h4>
+                                <p>Finding hospitals within <span id="search-radius">50</span> km radius</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hospitals-list">
+                        <div class="list-header">
+                            <h3>Nearest Hospitals</h3>
+                            <div class="results-info" id="results-info">
+                                <span id="results-count">0</span> hospitals found
+                            </div>
+                        </div>
+                        <div class="filter-controls">
+                            <select id="hospital-filter">
+                                <option value="all">All Hospitals</option>
+                                <option value="public">Public Hospitals</option>
+                                <option value="private">Private Hospitals</option>
+                                <option value="emergency">24/7 Emergency</option>
+                            </select>
+                            <select id="distance-filter">
+                                <option value="20">Within 20 km</option>
+                                <option value="50" selected>Within 50 km</option>
+                                <option value="100">Within 100 km</option>
+                                <option value="200">Within 200 km</option>
+                            </select>
+                        </div>
+                        <div id="hospitals-results" class="hospitals-results">
+                            <div class="empty-state">
+                                <p>🔍 Search for hospitals using your location or enter a town name</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emergency-contacts">
+                    <h3>Kenya Emergency Contacts</h3>
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <h4>🚑 National Ambulance</h4>
+                            <p>Emergency Medical Services</p>
+                            <button class="call-btn" onclick="simulateCall('1199')">Call 1199</button>
+                        </div>
+                        <div class="contact-card">
+                            <h4>🏥 Emergency Police</h4>
+                            <p>Police Emergency Line</p>
+                            <button class="call-btn" onclick="simulateCall('999')">Call 999</button>
+                        </div>
+                        <div class="contact-card">
+                            <h4>📞 Emergency Services</h4>
+                            <p>General Emergency</p>
+                            <button class="call-btn" onclick="simulateCall('112')">Call 112</button>
+                        </div>
+                        <div class="contact-card">
+                            <h4>🚨 Fire Department</h4>
+                            <p>Fire & Rescue Services</p>
+                            <button class="call-btn" onclick="simulateCall('999')">Call 999</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rural-health-info">
+                    <h3>📋 Rural Health Facilities Information</h3>
+                    <div class="health-tips">
+                        <div class="tip-card">
+                            <h4>🏥 Health Centers</h4>
+                            <p>Most sub-counties have health centers that can handle emergencies</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>💊 Dispensaries</h4>
+                            <p>Local dispensaries can provide first aid and basic medical care</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>🚑 Ambulance Services</h4>
+                            <p>County governments provide ambulance services in rural areas</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>📞 Community Health</h4>
+                            <p>Community health workers can assist with basic first aid</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="hospitals-list">
-                <div class="list-header">
-                    <h3>Nearest Hospitals</h3>
-                    <div class="results-info" id="results-info">
-                        <span id="results-count">0</span> hospitals found
-                    </div>
-                </div>
-                <div class="filter-controls">
-                    <select id="hospital-filter">
-                        <option value="all">All Hospitals</option>
-                        <option value="public">Public Hospitals</option>
-                        <option value="private">Private Hospitals</option>
-                        <option value="emergency">24/7 Emergency</option>
-                    </select>
-                    <select id="distance-filter">
-                        <option value="20">Within 20 km</option>
-                        <option value="50" selected>Within 50 km</option>
-                        <option value="100">Within 100 km</option>
-                        <option value="200">Within 200 km</option>
-                    </select>
-                </div>
-                <div id="hospitals-results" class="hospitals-results">
-                    <div class="empty-state">
-                        <p>🔍 Search for hospitals using your location or enter a town name</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="emergency-contacts">
-            <h3>Kenya Emergency Contacts</h3>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h4>🚑 National Ambulance</h4>
-                    <p>Emergency Medical Services</p>
-                    <button class="call-btn" onclick="simulateCall('1199')">Call 1199</button>
-                </div>
-                <div class="contact-card">
-                    <h4>🏥 Emergency Police</h4>
-                    <p>Police Emergency Line</p>
-                    <button class="call-btn" onclick="simulateCall('999')">Call 999</button>
-                </div>
-                <div class="contact-card">
-                    <h4>📞 Emergency Services</h4>
-                    <p>General Emergency</p>
-                    <button class="call-btn" onclick="simulateCall('112')">Call 112</button>
-                </div>
-                <div class="contact-card">
-                    <h4>🚨 Fire Department</h4>
-                    <p>Fire & Rescue Services</p>
-                    <button class="call-btn" onclick="simulateCall('999')">Call 999</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="rural-health-info">
-            <h3>📋 Rural Health Facilities Information</h3>
-            <div class="health-tips">
-                <div class="tip-card">
-                    <h4>🏥 Health Centers</h4>
-                    <p>Most sub-counties have health centers that can handle emergencies</p>
-                </div>
-                <div class="tip-card">
-                    <h4>💊 Dispensaries</h4>
-                    <p>Local dispensaries can provide first aid and basic medical care</p>
-                </div>
-                <div class="tip-card">
-                    <h4>🚑 Ambulance Services</h4>
-                    <p>County governments provide ambulance services in rural areas</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="emergency-screen" class="screen">
             <div class="container">
@@ -175,11 +178,15 @@
                     <div class="emergency-numbers">
                         <div class="number-card">
                             <h3>🚑 Medical Emergency</h3>
-                            <button class="call-btn" onclick="simulateCall('911')">Call 911</button>
+                            <button class="call-btn" onclick="simulateCall('1199')">Call 1199</button>
                         </div>
                         <div class="number-card">
-                            <h3>📞 Poison Control</h3>
-                            <button class="call-btn" onclick="simulateCall('1-800-222-1222')">Call 1-800-222-1222</button>
+                            <h3>🏥 Emergency Police</h3>
+                            <button class="call-btn" onclick="simulateCall('999')">Call 999</button>
+                        </div>
+                        <div class="number-card">
+                            <h3>📞 General Emergency</h3>
+                            <button class="call-btn" onclick="simulateCall('112')">Call 112</button>
                         </div>
                     </div>
                     <div class="emergency-instructions">
@@ -189,7 +196,8 @@
                             <li>Do not move the person unless necessary</li>
                             <li>Keep the person warm and comfortable</li>
                             <li>Gather any medications the person takes</li>
-                            <li>Be ready to describe what happened</li>
+                            <li>Be ready to describe what happened and your location</li>
+                            <li>If in rural area, send someone to flag down help on the road</li>
                         </ul>
                     </div>
                 </div>
